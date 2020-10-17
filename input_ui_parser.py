@@ -1,8 +1,10 @@
 from sys import argv as cliArgs
 from spoti_yt import scrape_spotify
+from spoti_yt import get_youtube_url
 
 """This module verifies the user input before proceeding further saving time.
 """
+
 guide = """
 To download a Playlist
 sdl https://open.spotify.com/<continues>
@@ -58,9 +60,13 @@ if(input_validator(cliArgs)):
 
     song_count, pl_name, track_artists_album = scrape_spotify(url)
 
+    # might replace all this with log later
     prGreen("Info")
     prGreen("Playlist name: {0}\nSong Count: {1}\n" .format(pl_name, song_count))
+    prGreen("Getting video id from youtube...")
 
-    prGreen("Starting Downloads one by one")
+    # search the strings on yotube and store the videoID
+    for query in track_artists_album:
+        videoID_list = get_youtube_url(query)
 
 

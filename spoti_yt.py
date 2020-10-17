@@ -2,16 +2,19 @@ import requests
 from bs4 import BeautifulSoup
 import youtube_dl
 
+"""All the cool stuff happens here
+"""
 # constant  stuff
 YOUTUBE_SEARCH_BASE = "https://www.youtube.com/results?search_query="
 BASE_URL = "https://youtube.com/"
+codec = 'm4a'
 
 # Options for youtube dl
 ydl_opts = {
         'format': 'bestaudio/best',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'm4a',    # might input in commandline if mp3 demanded
+            'preferredcodec': codec,    # might input in commandline if mp3 demanded
         }],                             # m4a is pretty dope
     }
 
