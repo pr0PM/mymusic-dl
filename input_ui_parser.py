@@ -2,7 +2,7 @@ from sys import argv as cliArgs
 from spoti_yt import scrape_spotify
 from spoti_yt import get_youtube_url
 
-"""This module verifies the user input before proceeding further saving time.
+"""This module verifies the user input before proceeding further, hence saving time.
 """
 
 guide = """
@@ -18,12 +18,13 @@ error = """
 """
 
 # For colorful output in the terminal rather than colorama or term...
-
+# why bloat? right
 def prRed(skk): 
     print("\033[91m{}\033[00m" .format(skk))
 
 def prGreen(skk): 
     print("\033[92m{}\033[00m" .format(skk)) 
+
 
 
 def input_validator(cliArgs):
@@ -56,7 +57,9 @@ def input_validator(cliArgs):
 
 if(input_validator(cliArgs)):
     url = cliArgs[1]
-    url = url[:url.index("?si=")]
+    # remove the excessive parts from the link
+    if "?si=" in url:
+        url = url[:url.index("?si=")]
 
     song_count, pl_name, track_artists_album = scrape_spotify(url)
 
@@ -66,7 +69,11 @@ if(input_validator(cliArgs)):
     prGreen("Getting video id from youtube...")
 
     # search the strings on yotube and store the videoID
-    for query in track_artists_album:
-        videoID_list = get_youtube_url(query)
+    videoID_list = [ get_youtube_url(query) for query in track_artists_album ]
 
-
+    if None in videoID_list:
+        prRed("Something went wrong")
+    else:
+        prGreen("Here is the list of videoIDs")
+        for i in videoID_list:
+            print(i)

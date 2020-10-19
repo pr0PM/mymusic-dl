@@ -53,8 +53,14 @@ def get_youtube_url(search_term):
     # get the search results
     res = str(requests.get(YOUTUBE_SEARCH_BASE + search_term).content)
     
+    videoID = None
     # extract the yummy stuff from the soup
-    videoID = res[res.find("/watch?v="):res.find("/watch?v=")+20]
+    try:
+        videoID = res[res.find("/watch?v="):res.find("/watch?v=")+20]
+    except Exception:
+        videoID = None
+    # don't know what to catch here, i just think it will be easier to get none
+    # rather than something unexpected
 
     return videoID
 
