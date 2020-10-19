@@ -1,6 +1,7 @@
 from sys import argv as cliArgs
 from spoti_yt import scrape_spotify
 from spoti_yt import get_youtube_url
+from spoti_yt import download_audio
 
 """This module verifies the user input before proceeding further, hence saving time.
 """
@@ -77,3 +78,9 @@ if(input_validator(cliArgs)):
         prGreen("Here is the list of videoIDs")
         for i in videoID_list:
             print(i)
+
+    prRed("Starting Downloads . . .")
+
+    for videoID in videoID_list:
+        download_audio(videoID)
+        prGreen("Download +1 done")
