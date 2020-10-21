@@ -4,7 +4,12 @@ Download songs using web-scraping and [youtube-dl](https://github.com/ytdl-org/y
 
 #### So what's special here?
 No API's, hence no api keys care to about.<br>
-It just works :tm:
+It just works.
+
+---
+#### Usage
+tba
+
 
 ---
 #### Currently Supports
