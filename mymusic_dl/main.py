@@ -30,7 +30,7 @@ def input_validator(cliArgs):
     """Checks the commandline inputs while presenting the usage + error messages
     in colorful manner.
     """
-    if len(cliArgs) <= 2:
+    if len(cliArgs) < 2:
         prRed("no/invalid input")
         prGreen(guide)
         return 0

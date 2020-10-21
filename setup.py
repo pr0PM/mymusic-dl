@@ -11,9 +11,9 @@ with open("requirements.txt") as r:
 
 setuptools.setup(
     name='mymusic_dl',
-    version="0.0.1a3",
+    version='0.0.1a7',
     python_requires='>=3',
-    install_requirements='requirements',
+    install_requires=requirements,
     author='Prateek Mishra',
     author_email='pr0pm@pm.me',
     url='https://github.com/pr0PM/mymusic-dl/',
@@ -23,6 +23,7 @@ setuptools.setup(
     license='MIT',
     keywords='music download youtube spotify playlist',
     packages=setuptools.find_packages(),
+    include_package_data=True,
     entry_points={
         'console_scripts': [
             'mymusic_dl=mymusic_dl.main:mymusic_dl',
