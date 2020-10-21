@@ -11,7 +11,7 @@ with open("requirements.txt") as r:
 
 setuptools.setup(
     name='mymusic_dl',
-    version="0.0.1a",
+    version="0.0.1a3",
     python_requires='>=3',
     install_requirements='requirements',
     author='Prateek Mishra',
@@ -23,6 +23,11 @@ setuptools.setup(
     license='MIT',
     keywords='music download youtube spotify playlist',
     packages=setuptools.find_packages(),
+    entry_points={
+        'console_scripts': [
+            'mymusic_dl=mymusic_dl.main:mymusic_dl',
+        ],
+    },
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: MIT License',
