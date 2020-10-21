@@ -1,7 +1,7 @@
 from sys import argv as cliArgs
-from spoti_yt import scrape_spotify
-from spoti_yt import get_youtube_url
-from spoti_yt import download_audio
+from functions import scrape_spotify
+from functions import get_youtube_url
+from functions import download_audio
 
 """This module verifies the user input before proceeding further, hence saving time.
 """

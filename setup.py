@@ -9,20 +9,19 @@ with open("requirements.txt") as r:
     requirements = r.read().splitlines()
 
 
-setup(
+setuptools.setup(
     name='mymusic_dl',
     version="0.0.1a",
     python_requires='>=3',
     install_requirements='requirements',
     author='Prateek Mishra',
     author_email='pr0pm@pm.me',
-    url='https://github.com/pr0PM/mymusic-dl/'
-    description='Download your music playlists using web-scraping '
-                'and youtube-dl no API keys involved',
+    url='https://github.com/pr0PM/mymusic-dl/',
+    description='Download your music playlists using web-scraping and youtube-dl no API keys involved',
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='MIT',
-    keywords='music download youtube spotify playlist'
+    keywords='music download youtube spotify playlist',
     packages=setuptools.find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -33,6 +32,6 @@ setup(
         'Topic :: Internet',
         'Topic :: Multimedia',
         'Topic :: Multimedia :: Sound/Audio',
-        'Intended Audience :: End Users/Desktop'
+        'Intended Audience :: End Users/Desktop',
     ],
 )
