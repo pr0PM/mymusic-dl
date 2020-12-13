@@ -11,7 +11,7 @@ with open("requirements.txt") as r:
 
 setuptools.setup(
     name='mymusic_dl',
-    version='0.0.1a7',
+    version='0.0.1b0',
     python_requires='>=3',
     install_requires=requirements,
     author='Prateek Mishra',
