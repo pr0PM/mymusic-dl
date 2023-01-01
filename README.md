@@ -1,4 +1,4 @@
-# mymusic-dl
+# mymusic-dl [bloken rn]
 
 Downloads the songs in your playlist using web-scraping and [youtube-dl](https://github.com/ytdl-org/youtube-dl/).
 
